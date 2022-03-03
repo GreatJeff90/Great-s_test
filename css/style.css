@@ -56,19 +56,27 @@ button {
 
 .main-section {
     width: 80%;
-    height: 80vh;
-    margin: 0 auto;
+    /* height: 80vh; */
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
     background: url(../images/piggy-girl.png);
-    background-size: cover;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
 }
 
 
-.main-section .main-left {
-    width: 100%;
+.main-section .main-left,
+.main-section .main-right {
+    width: 45%;
+    /* height: 80vh; */
 }
+
+
 
 .main-left .main-head {
-    width: 50%;
+    width: 100%;
 }
 
 .main-left .main-head h1{
@@ -80,7 +88,7 @@ button {
 
 
 .main-form{
-    width: 50%;
+    width: 100%;
     display: flex;
     margin: 20px 0;
     justify-content: space-between;
@@ -117,28 +125,25 @@ button {
 
 .main-form .form-row .input-box .calendar {
     display: flex;
-
+    position: relative;
 }
-
 .main-form .form-row .input-box .calendar input[type="text"] {
     margin-right: 20px;
+    padding: 20px;
+    position: relative;
+    background: url(../images/calendar.png);
+    background-repeat: no-repeat;
+    background-position: right;
 }
 
-.main-section .main-lower {
-    margin-top: 100px;
-}
-
-.main-section .main-lower button {
+.main-section .lower-section .main-lower button {
     background: #0D5ED3;
     border-radius: 10px 10px 10px 0px;
     border-style: none;
-    padding-top: 5px;
-    padding-right: 50px;
-    padding-bottom: 7px;
-    padding-left: 5px;
+    padding-right: 81px;
 }
 
-.main-section .main-lower button p {
+.main-section .lower-section .main-lower button p {
     color: #FFFFFF;
     font-size: 50px;
 }
@@ -160,7 +165,11 @@ button {
 
 
 @media (max-width: 769px) {
-    .nav-logo i {
+    header .container nav {
+        display: block;
+    }
+
+     .nav-logo i {
         font-size: 28px;
         display: block;
     }
@@ -170,7 +179,15 @@ button {
     }
 
     .main-section {
-        background: none;
+        background: none
+    }
+
+    .main-section .main-left {
+        width: 100%
+    }
+    
+    .main-section .main-right {
+        width: 0%
     }
 
     .main-left .main-head h1 {
@@ -181,12 +198,16 @@ button {
     }
 
     .main-left .main-form {
-        width: 28%;
+        width: 85%;
         flex-direction: column;
     }
 
     .main-left .main-form .form-row .input-box {
        margin: 20px 0;
+    }
+
+    .main-left .main-form .form-row .input-box  label {
+        font-size: 21px;
     }
 
     .main-left .main-form .form-row .input-box .calendar {
@@ -197,31 +218,39 @@ button {
         margin: 20px 0;
     }
 
-    .main-section .main-lower {
+    .main-section .lower-section .main-lower {
         margin: 0;
     }
 
-    .main-section .main-lower button {
+    .main-section .lower-section .main-lower p {
+        font-size: 30px;
+    }
+
+    .main-section .lower-section .main-lower button {
         margin: 20px 0;
     }
 }
 
 @media (max-width: 427px) {
+    header nav {
+        display: block;
+    }
+
     nav .nav-logo a img {
         width: 77px;
         height: 29px;
-    }
-
-    .nav-logo  {
-        display: contents;
     }
 
     .nav-list-section {
         display: none;
     }
 
-    .main-section {
-        background: none;
+    .main-left {
+        width: 100%;
+    }
+
+    .main-left .main-head {
+        width: 100%;
     }
 
     .main-left .main-head h1 {
@@ -241,7 +270,8 @@ button {
     }
 
     .main-left .main-form .form-row .input-box label {
-        width: 50%;
+        width: 100%;
+        font-size: 21px;
     }
 
     .main-left .main-form .form-row .input-box .calendar {
@@ -253,31 +283,40 @@ button {
         width: 67%;
     }
 
-    .main-section .main-lower {
+    .main-section .main-right {
+        background: none;
+    }
+
+    .main-section .lower-section .main-lower {
         margin: 0;
     }
 
-    .main-section .main-lower button{
+    .main-section .lower-section .main-lower button{
         margin: 10px 0;
     }
 
-    .main-section .main-lower button p {
+    .main-section .lower-section .main-lower button p {
         font-size: 20px;
     }
 }
 
 @media (max-width: 322px) {
-    .nav-logo  {
-        display: contents;
+    header nav {
+        display: block;
     }
     
+    .main-left .main-head {
+        width: 100%;
+    }
+
     .main-left .main-form .form-row {
         flex-direction: column;
+        width: 50%;
     }
 
     .main-left .main-form .form-row .input-box label {
         width: 260%;
-        font-size: 20px;
+        font-size: 21px;
     }
 
     .main-left .main-form .form-row .input-box .calendar {
@@ -286,11 +325,11 @@ button {
 
     .main-left .main-form .form-row.input-box input[type="text"], .main-form .input-box select  {
         margin: 20px 0;
-        width: 67%;
+        width: 167%;
     }
 
 
-    .main-section .main-lower button p {
+    .main-section .main-lower .main-lower button p {
         font-size: 40px;
     }
 }
